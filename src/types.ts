@@ -7,5 +7,6 @@ export type Frame = {
 };
 
 export interface Render {
+    init(frame: Frame): void;
     render(frame: Frame): void;
 }

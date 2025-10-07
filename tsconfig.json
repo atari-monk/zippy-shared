@@ -1,15 +1,39 @@
 {
     "compilerOptions": {
-        "target": "ES2022",
-        "module": "ESNext",
-        "lib": ["ES2022", "DOM"],
-        "moduleResolution": "bundler",
-        "declaration": true,
-        "declarationMap": true,
-        "outDir": "./dist",
-        "strict": true,
+        // ===============================
+        // Output & Module settings
+        // ===============================
+        "target": "ES2022", // modern JavaScript output
+        "module": "ESNext", // preserve native ES modules
+        "lib": ["ES2022", "DOM"], // full browser + modern JS APIs
+        "declaration": true, // generate .d.ts files
+        "declarationMap": true, // include source maps for types
+        "sourceMap": true, // JS source maps for debugging
+        "outDir": "./dist", // output directory
+        "rootDir": "./src", // source directory
+        "moduleResolution": "bundler", // bundler-friendly resolution
+        "esModuleInterop": true, // interop between CJS and ESM
+        "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
-        "esModuleInterop": true
+        "strict": true, // enable full type safety
+        "isolatedModules": true, // required for modern bundlers
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "noEmitOnError": true,
+
+        // ===============================
+        // Modern features
+        // ===============================
+        "useDefineForClassFields": true,
+        "downlevelIteration": true,
+        "moduleDetection": "force",
+
+        // ===============================
+        // NPM package setup
+        // ===============================
+        "composite": false,
+        "emitDeclarationOnly": false
     },
-    "include": ["src"]
+    "include": ["src"],
+    "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }
